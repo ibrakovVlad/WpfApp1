@@ -1,0 +1,41 @@
+﻿<Page x:Class="Market.Views.PersonalAccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Market.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Title="PersonalAccountPage"
+      Height="700" Width="1200">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="19*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF2D0CFF" Offset="1"/>
+                <GradientStop Color="#FF090972" Offset="0.007"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border MinWidth="300" Margin="15,56,15,0" Background="White" VerticalAlignment="Top" Padding="30" MaxWidth="1000" CornerRadius="30" Height="550" Grid.ColumnSpan="2">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="AliceBlue" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock FontSize="50" FontWeight="Bold" Foreground="#FF0B2F8A" Height="61" Text="Информация о пользователе"/>
+                <Button Content="Редактировать" FontSize="20" Margin="-600,377,15,69" Foreground="#FF0B2F8A" FontWeight="Bold" Style="{StaticResource MaterialDesignToolButton}" Click="Button_reg" Width="270"/>
+                <Button Content="Удалить аккаунт" FontSize="20" Margin="600,-105,15,69" Foreground="Red" FontWeight="Bold" Style="{StaticResource MaterialDesignToolButton}" Click="Button_del" Width="180"/>
+                <TextBox x:Name="BoxLogin" Margin="0 -800 0 0" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="50" FontSize="16" SelectionBrush="#FF2D0CFF" CaretBrush="#FF2D0CFF"  />
+                <PasswordBox Margin="0 -700 0 0" x:Name="BoxPass" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Height="50" FontSize="16" SelectionBrush="#FF2D0CFF" CaretBrush="#FF2D0CFF" />
+                <PasswordBox Margin="0 -600 0 0" x:Name="BoxPass2" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Height="50" FontSize="16" CaretBrush="#FF2D0CFF" SelectionBrush="#FF2D0CFF" />
+                <TextBox Margin="0 -500 0 0" x:Name="BoxEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="50" FontSize="16" CaretBrush="#FF2D0CFF" SelectionBrush="#FF2D0CFF" />
+            </StackPanel>
+        </Border>
+        <Button Content="Назад" FontSize="20" Margin="916,78,128,590" Foreground="#FF0B2F8A" FontWeight="Bold" Style="{StaticResource MaterialDesignToolButton}" Click="DoGoBack" Grid.Column="1"/>
+    </Grid>
+</Page>
